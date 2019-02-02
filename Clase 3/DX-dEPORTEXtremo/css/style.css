@@ -11,11 +11,63 @@ a {
 a:hover {
 	color: #FF0000;
 }
-header {
+#top {
 	background-color: #333333;
 	padding: 10px;
+	/*flexbox*/
+	display: flex;
+	flex-flow: row;
+	align-items:center; /*flex start \ center \ flex-end*/
+	justify-content: flex start;
+	height: 100px
 }
-h1 {
+#top h1 {
 	margin: 0;
 	font-size:32px;
+}
+#menu {
+	margin-left:auto
+}
+#menu ul {
+	margin: 0
+	list-style: none;
+	padding: 0;
+	overflow: hidden;
+}
+#menu ul li {
+	/*background-color: red*/
+	float: left;
+}
+#menu ul li a {
+	display: block;
+	padding: 5px;
+	text-align: center;
+}
+#menu ul li:nth-of-type(odd) a {
+	/*background-color: grey*/
+}
+#menu ul li a: hover {
+	color: #333333
+	background-color: grey
+}
+#content figure {
+	margin: 0;
+}
+#content figcaption {
+	background-color: #333333;
+}
+#content h2 {
+	margin: 0;
+	font-size: 36px;
+	color: #FFFFFF;
+}
+#content img {
+	display: block;
+	width: 100%;
+}
+.noticia {
+	padding: 10px;
+	border-bottom: solid 1px #cccccc
+	
+	
 }
