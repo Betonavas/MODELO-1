@@ -148,7 +148,7 @@
         let noticias = JSON.parse(ajax.response)
 
         noticias.forEach(function(noticia){
-          let plantilla = document.querySelector("articulo"). cloneNode(true)
+          let plantilla = document.querySelector("articulo").cloneNode(true)
 
           plantilla.querySelector("h3").innerText = noticia.titulo
           plantilla.querySelector(".small a").innerText = noticia.autor
