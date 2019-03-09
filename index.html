@@ -85,7 +85,7 @@
 </div>
 
     <main class="container-fluid">
-      <article class="row py-3 border-bottom">
+      <article class="row py-3 mx-0 border-bottom articulo">
         <div class="col-12 col-md-6 col-lg-4">
           <img src="https://via.placeholder.com/480x320" class="img-fluid">
         </div> 
@@ -134,7 +134,7 @@
   <!-- Fon noticias --> 
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->y
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -145,6 +145,20 @@
     ajax.open("GET", "noticias.json");
     ajax.onload = function(){
       if(ajax.status == 200){
+        let noticias = JSON.parse(ajax.response)
+
+        noticias.forEach(function(noticia){
+          let plantilla = document.querySelector("articulo"). cloneNode(true)
+
+          plantilla.querySelector("h3").innerText = noticia.titulo
+          plantilla.querySelector(".small a"). innerText = noticia.autor
+          plantilla.querySelector("p:last-child"). innertext = noticia.detalle
+          plantilla.querySelector("img").src "img/" + noticia.imagen
+
+          document.querySelector("main"). appendChild( plantilla )
+
+        })
+
         alert("Mira la consola")
         console.log(ajax.response )
       }
