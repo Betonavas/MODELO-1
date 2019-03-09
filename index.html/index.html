@@ -141,9 +141,16 @@
   
   <script>
 
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET", "noticias.json");
+    ajax.onload = function(){
+      if(ajax.status == 200){
+        alert("Mira la consola")
+        console.log(ajax.response )
+      }
 
-
-
+    };
+    ajax.send()
   </script>
 
 
