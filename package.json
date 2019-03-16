@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Betonavas/MODELO-1/issues"
   },
-  "homepage": "https://github.com/Betonavas/MODELO-1#readme"
+  "homepage": "https://github.com/Betonavas/MODELO-1#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "http": "0.0.0"
+  }
 }
